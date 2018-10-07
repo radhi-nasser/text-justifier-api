@@ -5,10 +5,10 @@ const apiController = require('../controllers/api.controller');
 
 
 /* Open API documentation */
-router.get('/', apiController.docs);
+router.get('/', apiController.showDocs);
 
 /* Open API documentation */
-router.get('/docs', apiController.docs);
+router.get('/docs', apiController.showDocs);
 
 /* Justify a text */
 router.post('/justify', apiController.justifyText);

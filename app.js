@@ -2,25 +2,41 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
-const indexRouter = require('./routes/index');
-const apiRouter = require('./routes/api');
 
 var app = express();
 
 app.use(logger('dev'));
 
-app.use(express.json());
+app.use(bodyParser.json({ limit: '50mb' }));
 
-app.use(express.urlencoded({
-    extended: false
+app.use(bodyParser.urlencoded({
+    extended: false,
+    limit: '50mb'
 }));
 
-app.use(bodyParser.text());
+app.use(bodyParser.text({ limit: '50mb' }));
 
 app.use(cookieParser());
 
-app.use('/', indexRouter);
-app.use('/api', apiRouter);
+app.use('/', require('./routes/index.route'));
+
+mongoose.connect('mongodb://localhost/text-justifier-api', {
+    useNewUrlParser: true,
+    useCreateIndex: true
+}, function(error) {
+    if (error) {
+        console.log('Error connecting to mongodb:', error);
+        process.exit();
+    }
+
+    app.use('/api', require('./routes/api.route'));
+
+    console.log('Successful connection to the database');
+});
+
+console.log('The server is running');
+
 
 module.exports = app;
