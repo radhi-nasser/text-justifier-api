@@ -24,7 +24,7 @@ module.exports = {
             "error",
             "always"
         ],
-        "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
+        "no-unused-vars": ["error", { "argsIgnorePattern": "next|user" }],
         'no-console': 'off'
     }
 };

@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 
+require('dotenv').config();
+
 var app = express();
 
 app.use(logger('dev'));
@@ -22,7 +24,7 @@ app.use(cookieParser());
 
 app.use('/', require('./routes/index.route'));
 
-mongoose.connect('mongodb://localhost/text-justifier-api', {
+mongoose.connect('mongodb://' + process.env.DATABASE_USERNAME + ':' + process.env.DATABASE_PASSWORD + '@' + process.env.DATABASE_HOST + ':' + process.env.DATABASE_PORT + '/' + process.env.DATABASE_NAME, {
     useNewUrlParser: true,
     useCreateIndex: true
 }, function(error) {
