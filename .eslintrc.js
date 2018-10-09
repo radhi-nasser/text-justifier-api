@@ -24,7 +24,19 @@ module.exports = {
             "error",
             "always"
         ],
-        "no-unused-vars": ["error", { "argsIgnorePattern": "next|user" }],
+        "no-unused-vars": ["error", { "argsIgnorePattern": "next|user|res" }],
         'no-console': 'off'
+    },
+    "globals": {
+        "emit": true,
+        "describe": true,
+        "it": true,
+        "beforeEach": true,
+        "before": true,
+        "after": true,
+        "expect": true
+    },
+    "parserOptions": {
+        "sourceType": "module"
     }
 };

@@ -1,19 +1,27 @@
 {
-  "name": "text-justifier-api",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "nodemon ./bin/www"
-  },
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "dotenv": "^6.1.0",
-    "express": "~4.16.0",
-    "mongoose": "^5.3.1",
-    "morgan": "~1.9.0",
-    "uuid": "^3.3.2",
-    "validator": "^10.8.0"
-  }
+    "name": "text-justifier-api",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "start": "nodemon ./bin/www",
+        "test": "SET NODE_ENV=test && mocha ./test/api.test.js",
+        "test-watch": "nodemon --exec 'npm test'"
+    },
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "cookie-parser": "~1.4.3",
+        "debug": "~2.6.9",
+        "dotenv": "^6.1.0",
+        "express": "~4.16.0",
+        "mongoose": "^5.3.1",
+        "morgan": "~1.9.0",
+        "uuid": "^3.3.2",
+        "validator": "^10.8.0"
+    },
+    "devDependencies": {
+        "expect": "^23.6.0",
+        "mocha": "^5.2.0",
+        "nodemon": "^1.18.4",
+        "supertest": "^3.3.0"
+    }
 }

@@ -28,7 +28,7 @@ module.exports.justifyText = function(req, res) {
 
                 res.status(402);
                 res.send({
-                    'Error': 'Payment Required.'
+                    'error': 'Payment Required.'
                 });
                 return;
             }
@@ -160,7 +160,8 @@ module.exports.justifyText = function(req, res) {
                     return;
                 }
 
-                // sen the result
+                // send the result
+                res.setHeader('content-type', 'text/plain');
                 res.send(lines.join('\n'));
             });
 
@@ -168,7 +169,7 @@ module.exports.justifyText = function(req, res) {
         (error) => {
             res.status(error.code);
             res.send({
-                'Error': error.message
+                'error': error.message
             });
         }
     );
@@ -306,7 +307,7 @@ module.exports.generateToken = function(req, res) {
 
         res.status(400);
         res.send({
-            'Error': 'Only email field needed.'
+            'error': 'Only email field needed.'
         });
         return;
     }
@@ -319,7 +320,7 @@ module.exports.generateToken = function(req, res) {
             if (error.hasOwnProperty('name') && error.name === 'ValidationError') {
                 res.status(400);
                 res.send({
-                    'Error': error.errors.email.message
+                    'error': error.errors.email.message
                 });
             } else {
                 res.status(500);
