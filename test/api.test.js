@@ -131,7 +131,7 @@ describe('POST /api/token', () => {
             .send({ emaill: '' })
             .expect(400)
             .expect((res) => {
-                expect(res.body).toHaveProperty('error', 'Only email field needed.');
+                expect(res.body).toHaveProperty('error', 'Only email field needed');
             })
             .end((err, res) => {
                 if (err) {
@@ -159,7 +159,7 @@ describe('POST /api/justify', () => {
             .send('Test todo text Test')
             .expect(402)
             .expect((res) => {
-                expect(res.body).toHaveProperty('error', 'Payment Required.');
+                expect(res.body).toHaveProperty('error', 'PaymentRequired');
             })
             .end((err, res) => {
                 if (err) {
@@ -211,7 +211,7 @@ Test todo text Test todo text`);
             .send('test')
             .expect(401)
             .expect((res) => {
-                expect(res.body).toHaveProperty('error', 'Wrong credentials.');
+                expect(res.body).toHaveProperty('error', 'WrongCredentials');
             })
             .end((err, res) => {
                 if (err) {
@@ -232,7 +232,7 @@ Test todo text Test todo text`);
             .send('test')
             .expect(400)
             .expect((res) => {
-                expect(res.body).toHaveProperty('error', 'Wrong credentials format.');
+                expect(res.body).toHaveProperty('error', 'WrongCredentialsFormat');
             })
             .end((err, res) => {
                 if (err) {
@@ -252,7 +252,7 @@ Test todo text Test todo text`);
             .send('test')
             .expect(401)
             .expect((res) => {
-                expect(res.body).toHaveProperty('error', 'No credentials sent.');
+                expect(res.body).toHaveProperty('error', 'NoCredentialsSent');
             })
             .end((err, res) => {
                 if (err) {

@@ -4,11 +4,6 @@ const justifiedTextWidth = 80;
 const rateLimit = 80000;
 
 
-/* Open API documentation */
-module.exports.showDocs = function(req, res) {
-    res.send('Docs !!!');
-};
-
 /* Justify a text */
 module.exports.justifyText = function(req, res) {
 
@@ -28,7 +23,7 @@ module.exports.justifyText = function(req, res) {
 
                 res.status(402);
                 res.send({
-                    'error': 'Payment Required.'
+                    'error': 'PaymentRequired'
                 });
                 return;
             }
@@ -185,7 +180,7 @@ function checkAuthorizationToken(headers) {
 
             reject({
                 code: 401,
-                message: 'No credentials sent.'
+                message: 'NoCredentialsSent'
             });
             return;
         }
@@ -198,7 +193,7 @@ function checkAuthorizationToken(headers) {
 
             reject({
                 code: 400,
-                message: 'Wrong credentials format.'
+                message: 'WrongCredentialsFormat'
             });
             return;
         }
@@ -223,7 +218,7 @@ function checkAuthorizationToken(headers) {
 
                 reject({
                     code: 401,
-                    message: 'Wrong credentials.'
+                    message: 'WrongCredentials'
                 });
                 return;
             }
@@ -307,7 +302,7 @@ module.exports.generateToken = function(req, res) {
 
         res.status(400);
         res.send({
-            'error': 'Only email field needed.'
+            'error': 'Only email field needed'
         });
         return;
     }

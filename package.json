@@ -1,11 +1,12 @@
 {
     "name": "text-justifier-api",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "private": true,
     "scripts": {
         "start": "nodemon ./bin/www",
         "test": "SET NODE_ENV=test && mocha ./test/api.test.js",
-        "test-watch": "nodemon --exec 'npm test'"
+        "test-watch": "nodemon --exec 'npm test'",
+        "docs": "apidoc -i routes/ -o public/"
     },
     "dependencies": {
         "body-parser": "^1.18.3",
@@ -19,6 +20,7 @@
         "validator": "^10.8.0"
     },
     "devDependencies": {
+        "apidoc": "^0.17.6",
         "expect": "^23.6.0",
         "mocha": "^5.2.0",
         "nodemon": "^1.18.4",

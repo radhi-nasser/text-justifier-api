@@ -22,9 +22,14 @@ app.use(bodyParser.text({ limit: '50mb' }));
 
 app.use(cookieParser());
 
+app.use(express.static(__dirname + '/public'));
+
 app.use('/', require('./routes/index.route'));
 
-mongoose.connect('mongodb://' + process.env.DATABASE_USERNAME + ':' + process.env.DATABASE_PASSWORD + '@' + process.env.DATABASE_HOST + ':' + process.env.DATABASE_PORT + '/' + process.env.DATABASE_NAME, {
+let connectionString = 'mongodb://' + process.env.DATABASE_USERNAME + ':' + process.env.DATABASE_PASSWORD + '@' + process.env.DATABASE_HOST + ':' + process.env.DATABASE_PORT + '/' + process.env.DATABASE_NAME;
+console.log(connectionString);
+
+mongoose.connect(connectionString, {
     useNewUrlParser: true,
     useCreateIndex: true
 }, function(error) {

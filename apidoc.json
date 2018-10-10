@@ -1,0 +1,12 @@
+{
+    "name": "text-justifier-api",
+    "version": "1.0.0",
+    "description": "Text Justifier API",
+    "title": "Custom apiDoc browser title",
+    "url": "https://text-justifier-api.herokuapp.com",
+    "sampleUrl": "https://text-justifier-api.herokuapp.com",
+    "template": {
+        "withCompare": true,
+        "withGenerator": true
+    }
+}
