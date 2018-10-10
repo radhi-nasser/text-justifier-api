@@ -23,7 +23,7 @@ define({ "api": [
             "group": "Header",
             "optional": false,
             "field": "Content-Type",
-            "description": "<p>text/plain</p>"
+            "description": "<p>The input format (text/plain)</p>"
           }
         ]
       }
@@ -35,7 +35,7 @@ define({ "api": [
             "group": "Success 200",
             "optional": false,
             "field": "Text",
-            "description": "<p>output The user text</p>"
+            "description": "<p>The justified text</p>"
           }
         ]
       }

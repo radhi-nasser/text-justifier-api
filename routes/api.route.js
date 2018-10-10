@@ -12,9 +12,9 @@ const apiController = require('../controllers/api.controller');
  * @apiSampleRequest off
  *
  * @apiHeader Authorization Bearer Authentication
- * @apiHeader Content-Type text/plain
+ * @apiHeader Content-Type The input format (text/plain)
  *
- * @apiSuccess Text output The user text
+ * @apiSuccess Text The justified text
  * @apiError Error The error message (PaymentRequired | NoCredentialsSent | WrongCredentialsFormat | WrongCredentials)
  */
 router.post('/justify', apiController.justifyText);
