@@ -4,8 +4,7 @@
     "private": true,
     "scripts": {
         "start": "nodemon ./bin/www",
-        "test": "SET NODE_ENV=test && mocha ./test/api.test.js",
-        "test-watch": "nodemon --exec 'npm test'",
+        "tests": "SET NODE_ENV=test && mocha ./test/api.test.js",
         "docs": "apidoc -i routes/ -o public/"
     },
     "dependencies": {
